@@ -10,8 +10,12 @@ BOT_NAME = 'weibocn'
 
 SPIDER_MODULES = ['weibocn.spiders']
 NEWSPIDER_MODULE = 'weibocn.spiders'
-DEFAULT_ITEM_CLASS = 'weibocn.items.Website'
+DEFAULT_ITEM_CLASS = 'weibocn.items.WeibocnItem'
 ITEM_PIPELINES = ['weibocn.pipelines.WeibocnPipeline']
-
+SCHEDULER_ORDER = 'BFO'
+CONCURRENT_REQUESTS = 32
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'weibocn (+http://www.yourdomain.com)'
+USER_AGENT = 'weibocn'
+DOWNLOAD_DELAY = 3
+DOWNLOAD_TIMEOUT = 15
+

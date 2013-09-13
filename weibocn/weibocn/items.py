@@ -27,3 +27,9 @@ class CmtRptItem(Item):
     cnt = Field()
     time = Field()
     tid = Field()
+
+#comment and repost item
+class MidItem(Item):
+    #message id, user name,nickname
+    #content,time and type
+    mid = Field()
