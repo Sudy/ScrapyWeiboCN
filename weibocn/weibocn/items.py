@@ -9,27 +9,29 @@ class WeibocnItem(Item):
     # define the fields for your item here like:
     # name = Field()
     #userid,message id,content,like,repost,and comment
-    uid = Field()
     mid = Field()
+    uid = Field()
     cnt = Field()
-    like = Field()
-    repost = Field()
-    cmt = Field()
+    pos = Field()
     time = Field()
+    tid = Field()
+    #event id
+    eid = Field()
 
+'''
 #comment and repost item
 class CmtRptItem(Item):
     #message id, user name,nickname
     #content,time and type
     mid = Field()
-    usrname = Field()
-    nickname = Field()
+    uid = Field()
     cnt = Field()
+    pos = Field()
     time = Field()
-    tid = Field()
 
 #comment and repost item
 class MidItem(Item):
     #message id, user name,nickname
     #content,time and type
     mid = Field()
+'''

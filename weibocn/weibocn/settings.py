@@ -12,10 +12,19 @@ SPIDER_MODULES = ['weibocn.spiders']
 NEWSPIDER_MODULE = 'weibocn.spiders'
 DEFAULT_ITEM_CLASS = 'weibocn.items.WeibocnItem'
 ITEM_PIPELINES = ['weibocn.pipelines.WeibocnPipeline']
-SCHEDULER_ORDER = 'BFO'
-CONCURRENT_REQUESTS = 32
+SCHEDULER_ORDER = 'DFO'
+CONCURRENT_REQUESTS = 50
+
+SCHEDULER = "scrapy_redis.scheduler.Scheduler"
+SCHEDULER_PERSIST = True
+SCHEDULER_QUEUE_CLASS = "scrapy_redis.queue.SpiderPriorityQueue"
+
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 USER_AGENT = 'weibocn'
-DOWNLOAD_DELAY = 3
-DOWNLOAD_TIMEOUT = 15
+DOWNLOAD_DELAY = 2
+DOWNLOAD_TIMEOUT = 5
+
+# Specify the host and port to use when connecting to Redis (optional).
+REDIS_HOST = '192.168.3.48'
+REDIS_PORT = 6379
 
